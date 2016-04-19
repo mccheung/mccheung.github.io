@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>MC@Program</title>
+  <title>Tag: fdisk | MC@Program</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MC@Program">
-<meta property="og:url" content="http://mccheung.github.io/index.html">
+<meta property="og:url" content="http://mccheung.github.io/tags/fdisk/index.html">
 <meta property="og:site_name" content="MC@Program">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -198,107 +198,52 @@
 
       <div class="body-wrap">
   
-    <article id="post-How-to-add-a-new-hard-disk-on-Debian-OS" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2016/04/19/How-to-add-a-new-hard-disk-on-Debian-OS/" class="article-date">
-  	<time datetime="2016-04-19T09:33:09.000Z" itemprop="datePublished">2016-04-19</time>
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2016/04/19/How-to-add-a-new-hard-disk-on-Debian-OS/" class="archive-article-date">
+  	<time datetime="2016-04-19T09:33:09.000Z" itemprop="datePublished">Apr 19</time>
 </a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/19/How-to-add-a-new-hard-disk-on-Debian-OS/">How to add a new hard disk on Debian OS</a>
+      <a class="archive-article-title" href="/2016/04/19/How-to-add-a-new-hard-disk-on-Debian-OS/">How to add a new hard disk on Debian OS</a>
     </h1>
   
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Adding a additional hard disk to your server is easy and often required.<br>Here’s steps through the process newly attached drive. </p>
-</blockquote>
-<h2 id="STEPS"><a href="#STEPS" class="headerlink" title="STEPS"></a>STEPS</h2><h4 id="1-Figure-out-the-device-name-for-the-new-device"><a href="#1-Figure-out-the-device-name-for-the-new-device" class="headerlink" title="1 Figure out the device name for the new device"></a>1 Figure out the device name for the new device</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ fdisk <span class="_">-l</span></span><br></pre></td></tr></table></figure>
-<pre><code>root@debian:~# fdisk -l
-
-Disk /dev/sdb: 1000.2 GB, 1000204886016 bytes
-255 heads, 63 sectors/track, 121601 cylinders, total 1953525168 sectors
-Units = sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 4096 bytes
-I/O size (minimum/optimal): 4096 bytes / 4096 bytes
-Disk identifier: 0x00000000
-
-**Disk /dev/sdb doesn&apos;t contain a valid partition table**
-
-Disk /dev/sda: 128.0 GB, 128035676160 bytes
-255 heads, 63 sectors/track, 15566 cylinders, total 250069680 sectors
-Units = sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disk identifier: 0x00018dcc
-
-   Device Boot      Start         End      Blocks   Id  System
-/dev/sda1   *        2048   239855615   119926784   83  Linux
-/dev/sda2       239857662   250068991     5105665    5  Extended
-/dev/sda5       239857664   250068991     5105664   82  Linux swap / Solaris
-
-`NOTE: Disk /dev/XXX  this usually is you new HDD Driver` 
-</code></pre><h4 id="2-artion-the-new-disk-using-the-cfdisk"><a href="#2-artion-the-new-disk-using-the-cfdisk" class="headerlink" title="2 artion the new disk using the cfdisk"></a>2 artion the new disk using the <code>cfdisk</code></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cfdisk /dev/sdb</span><br></pre></td></tr></table></figure>
-<pre><code>New -&gt; Primary -&gt; Specify size in MB -&gt; Write -&gt; yes
-Quit
-</code></pre><h4 id="3-Format-the-new-disk-with-ext4-filessystem"><a href="#3-Format-the-new-disk-with-ext4-filessystem" class="headerlink" title="3 Format the new disk with ext4 filessystem"></a>3 Format the new disk with ext4 filessystem</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/sdb1</span><br></pre></td></tr></table></figure>
-<h4 id="4-Create-a-new-directory-for-mount-the-new-disk-in-filesystem"><a href="#4-Create-a-new-directory-for-mount-the-new-disk-in-filesystem" class="headerlink" title="4 Create a new directory for mount the new disk in filesystem"></a>4 Create a new directory for mount the new disk in filesystem</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /new_hdd</span><br></pre></td></tr></table></figure>
-<h4 id="5-Findout-the-UUID-Universally-Unique-Identifier"><a href="#5-Findout-the-UUID-Universally-Unique-Identifier" class="headerlink" title="5 Findout the UUID (Universally Unique Identifier)"></a>5 Findout the UUID (<code>Universally Unique Identifier</code>)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">blkid</span><br></pre></td></tr></table></figure>
-<pre><code>/dev/sda5: UUID=&quot;44e8b854-8fe4-4a36-8d5a-f4cbed9536c6&quot; TYPE=&quot;swap&quot;
-/dev/sdb1: UUID=&quot;8e3c7dd4-a4f8-434c-b74b-7b927dbabe73&quot; TYPE=&quot;ext4&quot;
-/dev/sda1: UUID=&quot;b4ccfaeb-051e-4838-a082-e98fcaec078d&quot; TYPE=&quot;ext4&quot;&lt;/code&gt;
-</code></pre><h4 id="6-Edit-fstab-to-automatically-mount-new-HDD-on-boot"><a href="#6-Edit-fstab-to-automatically-mount-new-HDD-on-boot" class="headerlink" title="6 Edit fstab to automatically mount new HDD on boot"></a>6 Edit fstab to automatically mount new HDD on boot</h4><pre><code>`vim /etc/fstab`
-
-**add below line at end of file:**
-
-`UUID=8e3c7dd4-a4f8-434c-b74b-7b927dbabe73 /new_hdd ext4 errors=remount-ro 0 1`
-</code></pre><h4 id="7-You-also-can-mount-by-manual-Optional"><a href="#7-You-also-can-mount-by-manual-Optional" class="headerlink" title="7 You also can mount by manual( Optional) :"></a>7 You also can mount by manual( Optional) :</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sdb1 /new_hdd</span><br></pre></td></tr></table></figure>
-<p>Now the new hard disk is mounted and ready to use.</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blkid/">blkid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cfdisk/">cfdisk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debian/">debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/driver/">driver</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fdisk/">fdisk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mkfs-ext4/">mkfs.ext4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mount/">mount</a></li></ul>
 	</div>
 
-      
+          
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
 </article>
-
-
-
-
-
-
-
-
-
   
   
+    </div></section>
+  
+
+    
+
 </div>
       <footer id="footer">
   <div class="outer">
@@ -322,10 +267,10 @@ Quit
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false
 	}
