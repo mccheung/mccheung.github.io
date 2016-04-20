@@ -122,6 +122,103 @@
 
       <div class="body-wrap">
   
+    <article id="post-How-to-auto-re-connect-to-ADSL-pppoe-in-Debian" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/20/How-to-auto-re-connect-to-ADSL-pppoe-in-Debian/" class="article-date">
+  	<time datetime="2016-04-20T01:02:23.000Z" itemprop="datePublished">2016-04-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/20/How-to-auto-re-connect-to-ADSL-pppoe-in-Debian/">How to auto re-connect to ADSL pppoe in Debian</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>I am using Debian linux and I have a ADSL to connect on INTERNET.  The ADSL will offline each 48 hour with ISP, So I need it can auto re-connect to INTERNET when it’s down. I’ll use pppoeconf to config the ADSL.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install pppoe pppoeconf</span><br></pre></td></tr></table></figure>
+<p>When done install support package, then</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pppoeconf</span><br></pre></td></tr></table></figure>
+<p>Just answer the series questions, forexample: username, password etc.</p>
+<p>Now, I can connect from my terminal using: <code>pon dsl-provider</code> and disconnect using: <code>poff -a</code>.</p>
+<p>Then I writed cron script to keep connect, if down, will reconnect</p>
+<pre><code>#!/bin/sh
+# adsl-reconnect.sh
+
+IFACE=ppp0
+UP=&quot;pon dsl-provider&quot;
+LOG=/var/log/dsl-reconnect.log
+
+PTP=`ifconfig $IFACE 2&gt;&amp;1|grep P-t-P|cut -d : -f 3|cut -d &quot; &quot; -f 1`
+RECV=`ping -c 1 $PTP 2&gt;&amp;1|grep received|cut -d , -f 2|cut -d &quot; &quot; -f 2`
+
+if [ &quot;$RECV&quot; != &quot;1&quot; ]
+then
+    echo &quot;Try to poff connection... &quot; &gt;&gt;$LOG
+    `poff -a`
+
+    for i in `ps -eaf | grep &quot;pppd&quot; | tr -s &quot; &quot; | cut -f2 -d &quot; &quot;`
+    do
+        kill -9 ${i}
+    done
+
+    `poff -a`
+    sleep 3
+
+    date&gt;&gt;$LOG
+    echo &quot;hopefully killed&quot;
+    $UP &gt;&gt;$LOG 2&gt;&amp;1
+fi
+</code></pre><p>Save it to /usr/bin/auto-reconnect.sh, then add to contab:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ crontab <span class="_">-e</span></span><br></pre></td></tr></table></figure>
+<pre><code>* * * * * /usr/bin/auto-reconnect.sh
+</code></pre><p>All things done!!! </p>
+<p>Reference:<br>    <a href="http://www.khattam.info/howto-auto-re-connect-to-dsl-pppoe-in-linux-2010-03-07.html" target="_blank" rel="external">AUTO RE-CONNECT TO DSL PPPOE IN LINUX</a><br>    [Schedule Tasks on Linux Using Crontab](<a href="http://kvz.io/blog/2007/07/29/schedule-tasks-on-linux-using-crontab/" target="_blank" rel="external">http://kvz.io/blog/2007/07/29/schedule-tasks-on-linux-using-crontab/</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ADSL/">ADSL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AUTO/">AUTO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Debian/">Debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PPPOE/">PPPOE</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-How-to-add-a-new-hard-disk-on-Debian-OS" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
