@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>MC@Program</title>
+  <title>Config redis on Debian | MC@Program</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MC@Program">
-<meta property="og:url" content="http://mccheung.github.io/index.html">
+  <meta name="description" content="As we know, the redis it’s very fast and powerful, Because it’s all data in memory.But some times we need restar server or power down, it will lost all data. So we needconfig redis to support snapsho">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Config redis on Debian">
+<meta property="og:url" content="http://mccheung.github.io/2016/04/20/Config-redis-on-Debian/index.html">
 <meta property="og:site_name" content="MC@Program">
-<meta property="og:description">
+<meta property="og:description" content="As we know, the redis it’s very fast and powerful, Because it’s all data in memory.But some times we need restar server or power down, it will lost all data. So we needconfig redis to support snapsho">
+<meta property="og:updated_time" content="2016-04-20T05:40:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MC@Program">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Config redis on Debian">
+<meta name="twitter:description" content="As we know, the redis it’s very fast and powerful, Because it’s all data in memory.But some times we need restar server or power down, it will lost all data. So we needconfig redis to support snapsho">
   
     <link rel="alternative" href="/atom.xml" title="MC@Program" type="application/atom+xml">
   
@@ -120,9 +121,7 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-Config-redis-on-Debian" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Config-redis-on-Debian" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/04/20/Config-redis-on-Debian/" class="article-date">
@@ -138,12 +137,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/20/Config-redis-on-Debian/">Config redis on Debian</a>
+    <h1 class="article-title" itemprop="name">
+      Config redis on Debian
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Debian/">Debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -207,20 +217,19 @@ dir /var/lib/redis    # redis rdb working directory
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Debian/">Debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/20/How-to-auto-re-connect-to-ADSL-pppoe-in-Debian/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">How to auto re-connect to ADSL pppoe in Debian</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -231,206 +240,6 @@ dir /var/lib/redis    # redis rdb working directory
 
 
 
-
-  
-    <article id="post-How-to-auto-re-connect-to-ADSL-pppoe-in-Debian" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/20/How-to-auto-re-connect-to-ADSL-pppoe-in-Debian/" class="article-date">
-  	<time datetime="2016-04-20T01:02:23.000Z" itemprop="datePublished">2016-04-20</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/20/How-to-auto-re-connect-to-ADSL-pppoe-in-Debian/">How to auto re-connect to ADSL pppoe in Debian</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>I am using Debian linux and I have a ADSL to connect on INTERNET.  The ADSL will offline each 48 hour with ISP, So I need it can auto re-connect to INTERNET when it’s down. I’ll use pppoeconf to config the ADSL.</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install pppoe pppoeconf</span><br></pre></td></tr></table></figure>
-<p>When done install support package, then</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pppoeconf</span><br></pre></td></tr></table></figure>
-<p>Just answer the series questions, forexample: username, password etc.</p>
-<p>Now, I can connect from my terminal using: <code>pon dsl-provider</code> and disconnect using: <code>poff -a</code>.</p>
-<p>Then I writed cron script to keep connect, if down, will reconnect</p>
-<pre><code>#!/bin/sh
-# adsl-reconnect.sh
-
-IFACE=ppp0
-UP=&quot;pon dsl-provider&quot;
-LOG=/var/log/dsl-reconnect.log
-
-PTP=`ifconfig $IFACE 2&gt;&amp;1|grep P-t-P|cut -d : -f 3|cut -d &quot; &quot; -f 1`
-RECV=`ping -c 1 $PTP 2&gt;&amp;1|grep received|cut -d , -f 2|cut -d &quot; &quot; -f 2`
-
-if [ &quot;$RECV&quot; != &quot;1&quot; ]
-then
-    echo &quot;Try to poff connection... &quot; &gt;&gt;$LOG
-    `poff -a`
-
-    for i in `ps -eaf | grep &quot;pppd&quot; | tr -s &quot; &quot; | cut -f2 -d &quot; &quot;`
-    do
-        kill -9 ${i}
-    done
-
-    `poff -a`
-    sleep 3
-
-    date&gt;&gt;$LOG
-    echo &quot;hopefully killed&quot;
-    $UP &gt;&gt;$LOG 2&gt;&amp;1
-fi
-</code></pre><p>Save it to /usr/bin/auto-reconnect.sh, then add to contab:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ crontab <span class="_">-e</span></span><br></pre></td></tr></table></figure>
-<pre><code>* * * * * /usr/bin/auto-reconnect.sh
-</code></pre><p>All things done!!! </p>
-<p>Reference:<br>    <a href="http://www.khattam.info/howto-auto-re-connect-to-dsl-pppoe-in-linux-2010-03-07.html" target="_blank" rel="external">AUTO RE-CONNECT TO DSL PPPOE IN LINUX</a><br>    [Schedule Tasks on Linux Using Crontab](<a href="http://kvz.io/blog/2007/07/29/schedule-tasks-on-linux-using-crontab/" target="_blank" rel="external">http://kvz.io/blog/2007/07/29/schedule-tasks-on-linux-using-crontab/</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ADSL/">ADSL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AUTO/">AUTO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Debian/">Debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PPPOE/">PPPOE</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-How-to-add-a-new-hard-disk-on-Debian-OS" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/19/How-to-add-a-new-hard-disk-on-Debian-OS/" class="article-date">
-  	<time datetime="2016-04-19T09:33:09.000Z" itemprop="datePublished">2016-04-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/19/How-to-add-a-new-hard-disk-on-Debian-OS/">How to add a new hard disk on Debian OS</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Adding a additional hard disk to your server is easy and often required.<br>Here’s steps through the process newly attached drive. </p>
-</blockquote>
-<h2 id="STEPS"><a href="#STEPS" class="headerlink" title="STEPS"></a>STEPS</h2><h4 id="1-Figure-out-the-device-name-for-the-new-device"><a href="#1-Figure-out-the-device-name-for-the-new-device" class="headerlink" title="1 Figure out the device name for the new device"></a>1 Figure out the device name for the new device</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ fdisk <span class="_">-l</span></span><br></pre></td></tr></table></figure>
-<pre><code>root@debian:~# fdisk -l
-
-Disk /dev/sdb: 1000.2 GB, 1000204886016 bytes
-255 heads, 63 sectors/track, 121601 cylinders, total 1953525168 sectors
-Units = sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 4096 bytes
-I/O size (minimum/optimal): 4096 bytes / 4096 bytes
-Disk identifier: 0x00000000
-
-**Disk /dev/sdb doesn&apos;t contain a valid partition table**
-
-Disk /dev/sda: 128.0 GB, 128035676160 bytes
-255 heads, 63 sectors/track, 15566 cylinders, total 250069680 sectors
-Units = sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disk identifier: 0x00018dcc
-
-   Device Boot      Start         End      Blocks   Id  System
-/dev/sda1   *        2048   239855615   119926784   83  Linux
-/dev/sda2       239857662   250068991     5105665    5  Extended
-/dev/sda5       239857664   250068991     5105664   82  Linux swap / Solaris
-
-`NOTE: Disk /dev/XXX  this usually is you new HDD Driver` 
-</code></pre><h4 id="2-artion-the-new-disk-using-the-cfdisk"><a href="#2-artion-the-new-disk-using-the-cfdisk" class="headerlink" title="2 artion the new disk using the cfdisk"></a>2 artion the new disk using the <code>cfdisk</code></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cfdisk /dev/sdb</span><br></pre></td></tr></table></figure>
-<pre><code>New -&gt; Primary -&gt; Specify size in MB -&gt; Write -&gt; yes
-Quit
-</code></pre><h4 id="3-Format-the-new-disk-with-ext4-filessystem"><a href="#3-Format-the-new-disk-with-ext4-filessystem" class="headerlink" title="3 Format the new disk with ext4 filessystem"></a>3 Format the new disk with ext4 filessystem</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/sdb1</span><br></pre></td></tr></table></figure>
-<h4 id="4-Create-a-new-directory-for-mount-the-new-disk-in-filesystem"><a href="#4-Create-a-new-directory-for-mount-the-new-disk-in-filesystem" class="headerlink" title="4 Create a new directory for mount the new disk in filesystem"></a>4 Create a new directory for mount the new disk in filesystem</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /new_hdd</span><br></pre></td></tr></table></figure>
-<h4 id="5-Findout-the-UUID-Universally-Unique-Identifier"><a href="#5-Findout-the-UUID-Universally-Unique-Identifier" class="headerlink" title="5 Findout the UUID (Universally Unique Identifier)"></a>5 Findout the UUID (<code>Universally Unique Identifier</code>)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">blkid</span><br></pre></td></tr></table></figure>
-<pre><code>/dev/sda5: UUID=&quot;44e8b854-8fe4-4a36-8d5a-f4cbed9536c6&quot; TYPE=&quot;swap&quot;
-/dev/sdb1: UUID=&quot;8e3c7dd4-a4f8-434c-b74b-7b927dbabe73&quot; TYPE=&quot;ext4&quot;
-/dev/sda1: UUID=&quot;b4ccfaeb-051e-4838-a082-e98fcaec078d&quot; TYPE=&quot;ext4&quot;&lt;/code&gt;
-</code></pre><h4 id="6-Edit-fstab-to-automatically-mount-new-HDD-on-boot"><a href="#6-Edit-fstab-to-automatically-mount-new-HDD-on-boot" class="headerlink" title="6 Edit fstab to automatically mount new HDD on boot"></a>6 Edit fstab to automatically mount new HDD on boot</h4><pre><code>`vim /etc/fstab`
-
-**add below line at end of file:**
-
-`UUID=8e3c7dd4-a4f8-434c-b74b-7b927dbabe73 /new_hdd ext4 errors=remount-ro 0 1`
-</code></pre><h4 id="7-You-also-can-mount-by-manual-Optional"><a href="#7-You-also-can-mount-by-manual-Optional" class="headerlink" title="7 You also can mount by manual( Optional) :"></a>7 You also can mount by manual( Optional) :</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sdb1 /new_hdd</span><br></pre></td></tr></table></figure>
-<p>Now the new hard disk is mounted and ready to use.</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blkid/">blkid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cfdisk/">cfdisk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debian/">debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/driver/">driver</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fdisk/">fdisk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mkfs-ext4/">mkfs.ext4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mount/">mount</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -454,8 +263,8 @@ Quit
 		fancybox: true,
 		mathjax: true,
 		animate: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
