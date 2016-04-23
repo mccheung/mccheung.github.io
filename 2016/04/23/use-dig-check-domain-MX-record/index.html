@@ -4,17 +4,30 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Tag: Debian | MC@PERLER</title>
+  <title>use dig check domain MX record | MC@PERLER</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MC@PERLER">
-<meta property="og:url" content="http://mccheung.github.io/tags/Debian/index.html">
+  <meta name="description" content="Today my client got a return remail said: 
+
+Host or domain name not found. Name service error for name=xxx.xxx.com type=MX: Host not found, try again
+
+For like this issue, We can use below command to">
+<meta property="og:type" content="article">
+<meta property="og:title" content="use dig check domain MX record">
+<meta property="og:url" content="http://mccheung.github.io/2016/04/23/use-dig-check-domain-MX-record/index.html">
 <meta property="og:site_name" content="MC@PERLER">
-<meta property="og:description">
+<meta property="og:description" content="Today my client got a return remail said: 
+
+Host or domain name not found. Name service error for name=xxx.xxx.com type=MX: Host not found, try again
+
+For like this issue, We can use below command to">
+<meta property="og:updated_time" content="2016-04-23T02:46:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MC@PERLER">
-<meta name="twitter:description">
+<meta name="twitter:title" content="use dig check domain MX record">
+<meta name="twitter:description" content="Today my client got a return remail said: 
+
+Host or domain name not found. Name service error for name=xxx.xxx.com type=MX: Host not found, try again
+
+For like this issue, We can use below command to">
   
     <link rel="alternative" href="/atom.xml" title="MC@PERLER" type="application/atom+xml">
   
@@ -141,84 +154,78 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-use-dig-check-domain-MX-record" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/20/Config-redis-on-Debian/" class="archive-article-date">
-  	<time datetime="2016-04-20T03:17:00.000Z" itemprop="datePublished">Apr 20</time>
+    <div class="article-meta">
+      <a href="/2016/04/23/use-dig-check-domain-MX-record/" class="article-date">
+  	<time datetime="2016-04-23T02:32:02.000Z" itemprop="datePublished">2016-04-23</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/20/Config-redis-on-Debian/">Config redis on Debian</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      use dig check domain MX record
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Debian/">Debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dig/">dig</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/domain/">domain</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mx-record/">mx record</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Today my client got a return remail said: </p>
+<blockquote>
+<p>Host or domain name not found. Name service error for name=xxx.xxx.com type=MX: Host not found, try again</p>
+</blockquote>
+<p>For like this issue, We can use below command to check our domain MX setting:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ dig mydomain.com mx</span><br></pre></td></tr></table></figure></p>
+<p>It’s give back:</p>
+<pre><code>;; ANSWER SECTION:
+mydomain.com    1799    IN  MX  10 mail.mydomain.com.
+</code></pre><p>Looks feedback redcord, our domain setting is rightly.</p>
+
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/22/Learning-Swift-Language-NOTE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Learning Swift Language NOTE Day 1</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/20/How-to-auto-re-connect-to-ADSL-pppoe-in-Debian/" class="archive-article-date">
-  	<time datetime="2016-04-20T01:02:23.000Z" itemprop="datePublished">Apr 20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/20/How-to-auto-re-connect-to-ADSL-pppoe-in-Debian/">How to auto re-connect to ADSL pppoe in Debian</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ADSL/">ADSL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AUTO/">AUTO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Debian/">Debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PPPOE/">PPPOE</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
 
 </div>
       <footer id="footer">
@@ -244,9 +251,9 @@
 		mathjax: true,
 		animate: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false
 	}

@@ -143,6 +143,71 @@
 
       <div class="body-wrap">
   
+    <article id="post-use-dig-check-domain-MX-record" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/23/use-dig-check-domain-MX-record/" class="article-date">
+  	<time datetime="2016-04-23T02:32:02.000Z" itemprop="datePublished">2016-04-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/23/use-dig-check-domain-MX-record/">use dig check domain MX record</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Today my client got a return remail said: </p>
+<blockquote>
+<p>Host or domain name not found. Name service error for name=xxx.xxx.com type=MX: Host not found, try again</p>
+</blockquote>
+<p>For like this issue, We can use below command to check our domain MX setting:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ dig mydomain.com mx</span><br></pre></td></tr></table></figure></p>
+<p>It’s give back:</p>
+<pre><code>;; ANSWER SECTION:
+mydomain.com    1799    IN  MX  10 mail.mydomain.com.
+</code></pre><p>Looks feedback redcord, our domain setting is rightly.</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dig/">dig</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/domain/">domain</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mx-record/">mx record</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Learning-Swift-Language-NOTE" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
