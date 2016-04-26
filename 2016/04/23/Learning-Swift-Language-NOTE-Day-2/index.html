@@ -30,7 +30,7 @@ repeat-while
 
 Parentheses around the condition or loop variable are optional. Braces around the body are required.
 let iSources = [ 70, 30, 10">
-<meta property="og:updated_time" content="2016-04-23T05:37:52.000Z">
+<meta property="og:updated_time" content="2016-04-26T09:35:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Learning Swift Language NOTE Day 2">
 <meta name="twitter:description" content="Flow ControlConditionals
@@ -242,7 +242,55 @@ if let name = optionalName {
 <pre><code>let nickName: String? = nil
 let fullName: Stirng  = &quot;John Appleseed&quot;
 let informalGreeting = &quot;Hi \( nickName ?? fullName )&quot;
-</code></pre>
+</code></pre><p>Switches support any kind of data and a while variety of comparison operations they aren’t limited to integers and tests for equality.</p>
+<pre><code>let vegetable = &quot;red pepper&quot;
+switch vegetable {
+    case &quot;celery&quot;:
+        print(&quot;Add some raisins and make ants on a log.&quot;)
+    case &quot;cucumber&quot;, &quot;watercress&quot;:
+        print(&quot;That would make a good tea sandwich.&quot;)
+    case let x where x.hasSuffix(&quot;pepper&quot;)
+        print(&quot;Is it a spicy \(x)?&quot;)
+    default:
+        print(&quot;Everything teastes good in soup.&quot; )
+}
+</code></pre><p>Note how <code>let</code> can be used in a pattern to assign the value that matched the pattern to a constant. And there no need to explicitly bread out of the switch at the end of each case’s code.</p>
+<p>We can use <code>for-in</code> to iterate over items in a dictionary by providing a pair of names to use for each key-value pair.</p>
+<pre><code>let interestingNumbers = [
+    &quot;Prime&quot;: [ 2, 3, 5]
+]
+
+var largest = 0;
+
+for ( kind, numbers ) in interestingNumbers {
+    for number in numbers {
+        if number &gt; largest {
+            largest = number
+        }
+    }
+}
+
+print( &quot;Largest: \(largest)&quot; )
+</code></pre><p>Use while to repeat a block fo code until a condition changes. The condition of a loop can be at the end instead, ensuring that the loop is run at last once.</p>
+<pre><code>var n = 2
+while n &lt; 1000 {
+    n = n * 2
+}
+print( n )
+
+var m = 2
+repeat {
+    m = m * 2
+} while m &lt; 100 
+print( m )
+</code></pre><p>Use <code>..&lt;</code> to make a range of indexes.</p>
+<pre><code>var total = 0
+
+for i in 0..&lt;4 {
+    total += i
+}
+</code></pre><p>NOTE: <code>..&lt;</code> to make a range that omits its upper value, and use <code>...</code> to make a range that includes both values.</p>
+
       
     </div>
     
