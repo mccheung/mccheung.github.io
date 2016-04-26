@@ -46,13 +46,13 @@
 
         Programmer->new( 
             language => 'PERL',
+            years => 4+,
             seckill => [
                 Mojolicious,
                 Catalyst,
                 Dancer,
                 DBIx::Class,
             ],
-            years => 4+,
         );
         </pre>
         </div>
@@ -142,6 +142,98 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-Learning-Swift-Language-NOTE-Day-2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/23/Learning-Swift-Language-NOTE-Day-2/" class="article-date">
+  	<time datetime="2016-04-23T03:31:27.000Z" itemprop="datePublished">2016-04-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/23/Learning-Swift-Language-NOTE-Day-2/">Learning Swift Language NOTE Day 2</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Flow-Control"><a href="#Flow-Control" class="headerlink" title="Flow Control"></a>Flow Control</h3><h4 id="Conditionals"><a href="#Conditionals" class="headerlink" title="Conditionals"></a>Conditionals</h4><ul>
+<li><code>if</code> </li>
+<li><code>switch</code><h4 id="Loops"><a href="#Loops" class="headerlink" title="Loops"></a>Loops</h4></li>
+<li><code>for-in</code></li>
+<li><code>for</code></li>
+<li><code>while</code></li>
+<li><code>repeat-while</code></li>
+</ul>
+<p>Parentheses around the <code>condition</code> or <code>loop</code> variable are optional. Braces around the body are required.</p>
+<pre><code>let iSources = [ 70, 30, 100, 20 ]
+var tSource = 0
+
+for score in iSources {
+    if score &gt; 50 {
+        tSource += 3
+    } else {
+        tSource += 1
+    }
+}
+
+print( tSource )
+</code></pre><p>In a <code>if</code> statement, the conditional must be a Boolean expression – this means: <strong>That code such as ‘if score { …. }’ is an error, not an implicit comparision to zero</strong>.</p>
+<p>We can use <code>if</code> and <code>let</code> together to work with values that might be missing. These values are represented as optionals. An optional value either contains a value or contains nil to indicate that a value is missing. Write a question mard( <code>?</code> ) after the type of a value to mark the value as optional.</p>
+<pre><code>var optionalString: String ? = &quot;Hello&quot;
+print ( optionalString == nil )
+
+var optionalName: String? = &quot;John&quot;
+var greeting = &quot;Hello!&quot;
+
+if let name = optionalName {
+    greeting = &quot;Hello, \( name )&quot;
+}
+</code></pre><p>Another way to handle optional values is to provide a default value useing the <code>??</code> operator. If the optional value is missing, the default value is used instead.</p>
+<pre><code>let nickName: String? = nil
+let fullName: Stirng  = &quot;John Appleseed&quot;
+let informalGreeting = &quot;Hi \( nickName ?? fullName )&quot;
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-use-dig-check-domain-MX-record" class="article article-type-post" itemscope itemprop="blogPost">
   

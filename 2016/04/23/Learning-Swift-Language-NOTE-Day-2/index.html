@@ -4,24 +4,45 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Learning Swift Language NOTE Day 1 | MC@PERLER</title>
+  <title>Learning Swift Language NOTE Day 2 | MC@PERLER</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Day 1Simple Valueslet: make a constant, It’s doesn’t need to be known at compile time, but must assign it a value exactly once.var: make a variable.
-12let PI = 3.1415926var years = 5
-A constant or var">
+  <meta name="description" content="Flow ControlConditionals
+if 
+switchLoops
+for-in
+for
+while
+repeat-while
+
+Parentheses around the condition or loop variable are optional. Braces around the body are required.
+let iSources = [ 70, 30, 10">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Learning Swift Language NOTE Day 1">
-<meta property="og:url" content="http://mccheung.github.io/2016/04/22/Learning-Swift-Language-NOTE/index.html">
+<meta property="og:title" content="Learning Swift Language NOTE Day 2">
+<meta property="og:url" content="http://mccheung.github.io/2016/04/23/Learning-Swift-Language-NOTE-Day-2/index.html">
 <meta property="og:site_name" content="MC@PERLER">
-<meta property="og:description" content="Day 1Simple Valueslet: make a constant, It’s doesn’t need to be known at compile time, but must assign it a value exactly once.var: make a variable.
-12let PI = 3.1415926var years = 5
-A constant or var">
-<meta property="og:updated_time" content="2016-04-22T15:35:03.000Z">
+<meta property="og:description" content="Flow ControlConditionals
+if 
+switchLoops
+for-in
+for
+while
+repeat-while
+
+Parentheses around the condition or loop variable are optional. Braces around the body are required.
+let iSources = [ 70, 30, 10">
+<meta property="og:updated_time" content="2016-04-23T05:37:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Learning Swift Language NOTE Day 1">
-<meta name="twitter:description" content="Day 1Simple Valueslet: make a constant, It’s doesn’t need to be known at compile time, but must assign it a value exactly once.var: make a variable.
-12let PI = 3.1415926var years = 5
-A constant or var">
+<meta name="twitter:title" content="Learning Swift Language NOTE Day 2">
+<meta name="twitter:description" content="Flow ControlConditionals
+if 
+switchLoops
+for-in
+for
+while
+repeat-while
+
+Parentheses around the condition or loop variable are optional. Braces around the body are required.
+let iSources = [ 70, 30, 10">
   
     <link rel="alternative" href="/atom.xml" title="MC@PERLER" type="application/atom+xml">
   
@@ -148,11 +169,11 @@ A constant or var">
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-Learning-Swift-Language-NOTE" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Learning-Swift-Language-NOTE-Day-2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/22/Learning-Swift-Language-NOTE/" class="article-date">
-  	<time datetime="2016-04-22T15:05:22.000Z" itemprop="datePublished">2016-04-22</time>
+      <a href="/2016/04/23/Learning-Swift-Language-NOTE-Day-2/" class="article-date">
+  	<time datetime="2016-04-23T03:31:27.000Z" itemprop="datePublished">2016-04-23</time>
 </a>
     </div>
   
@@ -165,7 +186,7 @@ A constant or var">
         
   
     <h1 class="article-title" itemprop="name">
-      Learning Swift Language NOTE Day 1
+      Learning Swift Language NOTE Day 2
     </h1>
   
 
@@ -185,34 +206,42 @@ A constant or var">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h3><h4 id="Simple-Values"><a href="#Simple-Values" class="headerlink" title="Simple Values"></a>Simple Values</h4><p><code>let</code>: make a constant, It’s doesn’t need to be known at compile time, but must assign it a value exactly once.<br><code>var</code>: make a variable.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> PI = 3.1415926</span><br><span class="line">var years = 5</span><br></pre></td></tr></table></figure>
-<p>A constant or variable must have the same type. Default it will infer its type. If the initial value doesn’t provide enough information, We can specify the type by writing it after the variable, separated by a colon.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> PI: Double = 3</span><br><span class="line"><span class="built_in">let</span> PI_2 = 3.1415926</span><br></pre></td></tr></table></figure>
-<p>There’s a even simpler way to include values in string: </p>
-<blockquote>
-<p>Write the value in parentheses, and write a backslash<code>\</code> before the parentheses. </p>
-</blockquote>
-<pre><code>let foo = 3
-let bar = 5
-let foo_bar = &quot;Foo + Bar = \( foo + bar ).&quot;
-</code></pre><p>Create <code>array</code> and <code>dictionaries</code> using brackets<code>[]</code>, and access their elements by writeing the <code>index</code> or <code>key</code> in brackets. <strong>A comma is allowed after the last element</strong>.</p>
-<pre><code>var vList = [ &apos;foo&apos;, &apos;bar&apos; ]
-or 
-var vList = [ &apos;foo&apos;, &apos;bar&apos;, ]
+        <h3 id="Flow-Control"><a href="#Flow-Control" class="headerlink" title="Flow Control"></a>Flow Control</h3><h4 id="Conditionals"><a href="#Conditionals" class="headerlink" title="Conditionals"></a>Conditionals</h4><ul>
+<li><code>if</code> </li>
+<li><code>switch</code><h4 id="Loops"><a href="#Loops" class="headerlink" title="Loops"></a>Loops</h4></li>
+<li><code>for-in</code></li>
+<li><code>for</code></li>
+<li><code>while</code></li>
+<li><code>repeat-while</code></li>
+</ul>
+<p>Parentheses around the <code>condition</code> or <code>loop</code> variable are optional. Braces around the body are required.</p>
+<pre><code>let iSources = [ 70, 30, 100, 20 ]
+var tSource = 0
 
-var vDictionary = [
-    &quot;foo&quot;: 5,
-    &quot;bar&quot;: 8,
-]
+for score in iSources {
+    if score &gt; 50 {
+        tSource += 3
+    } else {
+        tSource += 1
+    }
+}
 
-vDictionary[&quot;foo&quot;]
-</code></pre><p>Create an <code>empty</code> array or dictionary, use the <code>initializer</code> syntax.</p>
-<pre><code>let emptyArray = [String]()
-let emptyDictionary = [String:Float]()
-</code></pre><p>Also, If the type can be inferred, you can write a empty array as <code>[]</code> and empty dictionary as <code>[:]</code>.</p>
-<pre><code>var vList = []
-var vDictionary = [:]
+print( tSource )
+</code></pre><p>In a <code>if</code> statement, the conditional must be a Boolean expression – this means: <strong>That code such as ‘if score { …. }’ is an error, not an implicit comparision to zero</strong>.</p>
+<p>We can use <code>if</code> and <code>let</code> together to work with values that might be missing. These values are represented as optionals. An optional value either contains a value or contains nil to indicate that a value is missing. Write a question mard( <code>?</code> ) after the type of a value to mark the value as optional.</p>
+<pre><code>var optionalString: String ? = &quot;Hello&quot;
+print ( optionalString == nil )
+
+var optionalName: String? = &quot;John&quot;
+var greeting = &quot;Hello!&quot;
+
+if let name = optionalName {
+    greeting = &quot;Hello, \( name )&quot;
+}
+</code></pre><p>Another way to handle optional values is to provide a default value useing the <code>??</code> operator. If the optional value is missing, the default value is used instead.</p>
+<pre><code>let nickName: String? = nil
+let fullName: Stirng  = &quot;John Appleseed&quot;
+let informalGreeting = &quot;Hi \( nickName ?? fullName )&quot;
 </code></pre>
       
     </div>
@@ -222,18 +251,9 @@ var vDictionary = [:]
     
 <nav id="article-nav">
   
-    <a href="/2016/04/23/use-dig-check-domain-MX-record/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          use dig check domain MX record
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/04/20/Config-redis-on-Debian/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Config redis on Debian</div>
+    <a href="/2016/04/23/use-dig-check-domain-MX-record/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">use dig check domain MX record</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
